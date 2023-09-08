@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_form" model="ir.ui.view">
+        <field name="name">school.record.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+            <h1>Record</h1>
+            <sheet>
+            <group>
+            <field name='name'/>
+            <field name='age'/>
+            <field name='gender'/>
+            </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+        <record id="view_school_tree" model="ir.ui.view">
+        <field name="name">school.record.tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+             <field name='name'/>
+            <field name='age'/>
+            <field name='gender'/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_school" model="ir.actions.act_window">
+            <field name="name">Creating Student Records</field>
+            <field name="res_model">school.student</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+     <menuitem id="menu_school_record" name="Student Record" sequence='10' parent='menu_school_operations' action='action_school'/>
+</odoo>
